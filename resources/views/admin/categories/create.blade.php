@@ -11,6 +11,9 @@
                         </div>
 
                         <div class="card-body">
+
+                            @include('admin.includes.errors')
+
                             <form action="{{ route('category.store') }}" method="POST">
                                 @csrf
                                 <div class="form-group">

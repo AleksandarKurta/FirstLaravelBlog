@@ -73,24 +73,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fa fa-dashboard"></i>
+              <i class="fas fa-home"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
+              <i class="fas fa-th-list"></i>
               <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
+                Categories
+                <i class="right fa fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview" style="display: none;">
+              <li class="nav-item">
+                <a href="{{ route('category.index') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Categories List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('category.create') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Category Create</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="{{ route('statistics') }}" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
+              <i class="fas fa-table"></i>
               <p>
                 Statistics
               </p>
@@ -124,5 +138,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <script src="/js/app.js"></script>
+<script>
+    @if(Session::has('success'))
+        toastr.success("{{ Session::get('success') }}");
+    @endif
+</script>
 </body>
 </html>

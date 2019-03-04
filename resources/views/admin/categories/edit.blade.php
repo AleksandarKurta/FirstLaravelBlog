@@ -11,6 +11,9 @@
                         </div>
 
                         <div class="card-body">
+
+                            @include('admin.includes.errors')
+
                             <form action="{{ route('category.update', ['category' => $category]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
