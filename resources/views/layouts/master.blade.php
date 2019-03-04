@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
               <i class="fas fa-th-list"></i>
               <p>
@@ -87,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview" style="display: none;">
+            <ul class="nav nav-treeview" >
               <li class="nav-item">
                 <a href="{{ route('category.index') }}" class="nav-link">
                   <i class="far fa-circle"></i>
