@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/posts/trashed', 'PostsController@trashed')->name('posts.trashed');
     Route::get('/posts/kill/{id}', 'PostsController@kill')->name('posts.kill');
     Route::get('/posts/restore/{id}', 'PostsController@restore')->name('posts.restore');
+    Route::resource('tag', 'TagsController');
 });
 
 

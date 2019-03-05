@@ -106,6 +106,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link">
               <i class="fas fa-th-list"></i>
               <p>
+                Tags
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" >
+              <li class="nav-item">
+                <a href="{{ route('tag.index') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Tags List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('tag.create') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Tag Create</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="fas fa-th-list"></i>
+              <p>
                 Posts
                 <i class="right fa fa-angle-left"></i>
               </p>
