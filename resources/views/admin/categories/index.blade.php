@@ -19,22 +19,28 @@
                                     <th>Delete</th>
                                 </thead>
                                 <tbody>
-                                    @foreach($categories as $category)
-                                        <tr>
-                                            <td>{{ $category->id }}</td>
-                                            <td>{{ $category->name }}</td>
-                                            <td>
-                                            <a href="{{ route('category.edit', ['category' => $category ]) }}" class="btn btn-info text-white btn-sm"><i class="fas fa-edit"></i></a>
-                                            </td>
-                                            <form action="{{ route('category.destroy', ['category' => $category])}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
+                                    @if($categories->count() > 0)
+                                        @foreach($categories as $category)
+                                            <tr>
+                                                <td>{{ $category->id }}</td>
+                                                <td>{{ $category->name }}</td>
                                                 <td>
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                <a href="{{ route('category.edit', ['category' => $category ]) }}" class="btn btn-info text-white btn-sm"><i class="fas fa-edit"></i></a>
                                                 </td>
-                                            </form>
+                                                <form action="{{ route('category.destroy', ['category' => $category])}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <td>
+                                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    </td>
+                                                </form>
+                                            </tr>
+                                        @endforeach
+                                    @else 
+                                        <tr>
+                                            <th colspan="5" class="text-center">No posts to show</th>
                                         </tr>
-                                    @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
