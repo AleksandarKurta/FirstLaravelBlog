@@ -102,6 +102,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="fas fa-th-list"></i>
+              <p>
+                Posts
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('post.index') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Posts List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('post.create') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Post Create</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('posts.trashed') }}" class="nav-link">
+              <i class="fas fa-trash-alt"></i>
+              <p>Trashed Posts</p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{ route('statistics') }}" class="nav-link">
               <i class="fas fa-table"></i>
@@ -141,6 +170,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script>
     @if(Session::has('success'))
         toastr.success("{{ Session::get('success') }}");
+    @endif
+
+    @if(Session::has('info'))
+        toastr.info("{{ Session::get('info') }}");
     @endif
 </script>
 </body>

@@ -20,5 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/statistics', 'HomeController@statistics')->name('statistics');
 Route::resource('category','CategoriesController');
+Route::resource('post','PostsController');
+Route::get('/posts/trashed', 'PostsController@trashed')->name('posts.trashed');
+Route::get('/posts/kill/{id}', 'PostsController@kill')->name('posts.kill');
+Route::get('/posts/restore/{id}', 'PostsController@restore')->name('posts.restore');
 
 
