@@ -9,6 +9,6 @@ class Tag extends Model
     protected $fillable = ['tag'];
 
     public function posts(){
-        return $this->belongsTomany('App\Post');
+        return $this->belongsToMany('App\Post');
     }
 }

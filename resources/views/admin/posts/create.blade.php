@@ -25,11 +25,22 @@
                                     <input type="file" name="featured" class="form-control">
                                 </div>
                                 <div class="form-group">
+                                    <label for="category_id">Select Category</label>
                                     <select name="category_id" id="category" class="form-control">
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id}}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tags">Select Tags</label>
+                                    @foreach($tags as $tag)
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="tags[]" value="{{ $tag->id }}">{{ $tag->tag }}
+                                            </label>
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <div class="form-group">
                                     <label for="content">Content</label>

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Session;
 use App\Post;
 use App\Category;
+use App\Tag;
+use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
@@ -28,11 +29,12 @@ class PostsController extends Controller
     public function create()
     {
         $categories = Category::all();
+        $tags = Tag::all();
         if($categories->count() == 0){
             Session::flash('info', 'You must have some categories created before you create post.');
             return back();
         }
-        return view('admin.posts.create', compact('categories'));
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -47,7 +49,8 @@ class PostsController extends Controller
             'title' => 'required',
             'featured' => 'required|image',
             'category_id' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'tags' => 'required'
         ]);
 
         $featured = $attributes['featured'];
@@ -57,7 +60,9 @@ class PostsController extends Controller
         
         $attributes['slug'] = str_slug($attributes['title']);
         
-        Post::create($attributes);
+        $post = Post::create($attributes);
+        
+        $post->tags()->attach($attributes['tags']);
 
         Session::flash('success', 'Post created successfully.');
 
@@ -84,7 +89,8 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.posts.edit', compact('post', 'categories'));
+        $tags = Tag::all();
+        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
     /**
@@ -99,7 +105,8 @@ class PostsController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'category_id' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'tags' => 'required'
         ]);
 
         if(request()->hasFile('featured')){
@@ -112,6 +119,8 @@ class PostsController extends Controller
         $attributes['slug'] = str_slug($attributes['title']);
 
         $post->update($attributes);
+
+        $post->tags()->sync($attributes['tags']);
 
         Session::flash('success', 'Post updated successfully.');
 
@@ -140,6 +149,8 @@ class PostsController extends Controller
 
     public function kill($id){
         $post = Post::withTrashed()->where('id', $id)->first();
+
+        $post->tags()->detach();
 
         $post->forceDelete();
 

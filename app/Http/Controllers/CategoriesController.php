@@ -98,6 +98,10 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
+        foreach($category->posts as $post){
+            $post->forceDelete();
+        }
+
         $category->delete();
 
         Session::flash('success', 'Category deleted successfully.');
