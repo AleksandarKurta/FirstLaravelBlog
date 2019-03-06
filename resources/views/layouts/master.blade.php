@@ -80,6 +80,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
+            <a href="{{ route('profile') }}" class="nav-link">
+              <i class="fas fa-user-tie"></i>
+              <p>
+                Profile
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
               <i class="fas fa-th-list"></i>
               <p>

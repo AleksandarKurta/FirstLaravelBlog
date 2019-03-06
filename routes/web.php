@@ -26,6 +26,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/posts/kill/{id}', 'PostsController@kill')->name('posts.kill');
     Route::get('/posts/restore/{id}', 'PostsController@restore')->name('posts.restore');
     Route::resource('tag', 'TagsController');
+    Route::get('/profile', 'ProfilesController@index')->name('profile');
+    Route::get('/profile/edit', 'ProfilesController@edit')->name('profile.edit');
+    Route::post('/profile/update/{user}', 'ProfilesController@update')->name('profile.update');
 });
 
 
