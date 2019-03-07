@@ -35,11 +35,14 @@
                                                     <a href="{{ route('user.admin', ['id'=> $user->id]) }}" class="btn btn-success btn-sm">Make Admin</a>
                                                 @endif
                                             </td>
+                                            
                                             <form action="{{ route('user.destroy', ['user' => $user])}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <td>
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    @if(Auth::user()->id !== $user->id)
+                                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                                    @endif
                                                 </td>
                                             </form>
                                         </tr>

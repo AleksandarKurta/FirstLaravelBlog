@@ -73,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="{{ route('home') }}" class="nav-link active">
-              <i class="fas fa-home"></i>
+              <i class="fas fa-home text-success"></i>
               <p>
                 Dashboard
               </p>
@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item has-treeview menu-open">
             <a href="{{ route('profile') }}" class="nav-link">
-              <i class="fas fa-user-tie"></i>
+              <i class="fas fa-user-tie text-warning"></i>
               <p>
                 Profile
               </p>
@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           @if(Auth::user()->admin)
             <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link">
-                <i class="fas fa-th-list"></i>
+                <i class="fas fa-users text-primary"></i>
                 <p>
                   Users
                   <i class="right fa fa-angle-left"></i>
@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           @endif
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
-              <i class="fas fa-th-list"></i>
+              <i class="fas fa-th-list text-secondary"></i>
               <p>
                 Categories
                 <i class="right fa fa-angle-left"></i>
@@ -137,7 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
-              <i class="fas fa-th-list"></i>
+              <i class="fas fa-tags text-success"></i>
               <p>
                 Tags
                 <i class="right fa fa-angle-left"></i>
@@ -160,7 +160,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
-              <i class="fas fa-th-list"></i>
+              <i class="fas fa-clipboard text-info"></i>
               <p>
                 Posts
                 <i class="right fa fa-angle-left"></i>
@@ -189,7 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <a href="{{ route('statistics') }}" class="nav-link">
-              <i class="fas fa-table"></i>
+              <i class="fas fa-table text-warning"></i>
               <p>
                 Statistics
               </p>
