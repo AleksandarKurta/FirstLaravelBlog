@@ -30,8 +30,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/profile/edit', 'ProfilesController@edit')->name('profile.edit');
     Route::post('/profile/update/{user}', 'ProfilesController@update')->name('profile.update');
     Route::resource('user', 'UsersController');
-    Route::get('/user/admin/{id}', 'UsersController@admin')->name('user.admin');
-    Route::get('/user/notadmin/{id}', 'UsersController@notadmin')->name('user.notadmin');
+    Route::get('/user/admin/{id}', 'UsersController@admin')->name('user.admin')->middleware('admin');
+    Route::get('/user/notadmin/{id}', 'UsersController@notadmin')->name('user.notadmin')->middleware('admin');
 });
 
 

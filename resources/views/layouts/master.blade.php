@@ -87,29 +87,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
-              <i class="fas fa-th-list"></i>
-              <p>
-                Users
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview" >
-              <li class="nav-item">
-                <a href="{{ route('user.index') }}" class="nav-link">
-                  <i class="far fa-circle"></i>
-                  <p>Users List</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('user.create') }}" class="nav-link">
-                  <i class="far fa-circle"></i>
-                  <p>User Create</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+          @if(Auth::user()->admin)
+            <li class="nav-item has-treeview menu-open">
+              <a href="#" class="nav-link">
+                <i class="fas fa-th-list"></i>
+                <p>
+                  Users
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" >
+                <li class="nav-item">
+                  <a href="{{ route('user.index') }}" class="nav-link">
+                    <i class="far fa-circle"></i>
+                    <p>Users List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('user.create') }}" class="nav-link">
+                    <i class="far fa-circle"></i>
+                    <p>User Create</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          @endif
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
               <i class="fas fa-th-list"></i>
