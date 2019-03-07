@@ -14,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    @yield('styles')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -238,7 +239,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </footer>
 </div>
 <!-- ./wrapper -->
-
 <script src="/js/app.js"></script>
 <script>
     @if(Session::has('success'))
@@ -249,5 +249,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         toastr.info("{{ Session::get('info') }}");
     @endif
 </script>
+@yield('scripts')
 </body>
 </html>
