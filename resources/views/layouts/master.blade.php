@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="{{ asset('img/avatar.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Aleksandar</a>
+          <a href="{{ route('profile') }}" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -86,6 +86,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Profile
               </p>
             </a>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="fas fa-th-list"></i>
+              <p>
+                Users
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" >
+              <li class="nav-item">
+                <a href="{{ route('user.index') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Users List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('user.create') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>User Create</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
@@ -158,7 +181,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <a href="{{ route('posts.trashed') }}" class="nav-link">
-              <i class="fas fa-trash-alt"></i>
+              <i class="fas fa-trash-alt text-danger"></i>
               <p>Trashed Posts</p>
             </a>
           </li>
@@ -170,6 +193,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+
+            <a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              <i class="fa fa-power-off text-danger"></i>
+              <p>
+                  {{ __('Logout') }}
+              </p>
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+          </li>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
