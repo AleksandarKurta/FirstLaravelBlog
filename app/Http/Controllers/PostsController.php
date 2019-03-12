@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use Auth;
 use App\Post;
 use App\Category;
 use App\Tag;
@@ -52,7 +53,7 @@ class PostsController extends Controller
             'featured' => 'required|image',
             'category_id' => 'required',
             'content' => 'required',
-            'tags' => 'required'
+            'tags' => 'required',
         ]);
 
         $featured = $attributes['featured'];
@@ -61,7 +62,8 @@ class PostsController extends Controller
         $attributes['featured'] = 'uploads/posts/' .  $featuredNewName;
         
         $attributes['slug'] = str_slug($attributes['title']);
-        
+        $attributes['user_id'] = Auth::id();
+
         $post = Post::create($attributes);
         
         $post->tags()->attach($attributes['tags']);
@@ -119,6 +121,7 @@ class PostsController extends Controller
         }
 
         $attributes['slug'] = str_slug($attributes['title']);
+        $attributes['user_id'] = Auth::id();
 
         $post->update($attributes);
 

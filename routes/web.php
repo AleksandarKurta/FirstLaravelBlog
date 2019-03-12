@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontEndController@index');
 
 Route::get('/admin', function () {
     return redirect('/admin/home');

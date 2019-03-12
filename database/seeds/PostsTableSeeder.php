@@ -25,7 +25,8 @@ class PostsTableSeeder extends Seeder
             Pellentesque ligula risus, suscipit nec lobortis id, aliquet vitae ipsum. Duis eget sagittis lacus. Aenean suscipit iaculis lectus, laoreet pulvinar mi cursus quis. Nam in nibh varius, imperdiet ante quis, consequat urna. Nunc aliquet vestibulum felis, quis tristique ligula placerat sit amet. Nam pharetra commodo ipsum, ut mollis nisi vulputate nec. Proin ultricies ac augue euismod finibus. Aenean porttitor purus sodales arcu varius, at volutpat sapien laoreet. Maecenas blandit accumsan ex. Duis venenatis id mi eget rhoncus. Mauris feugiat, lorem nec congue euismod, nibh massa cursus enim, nec sollicitudin neque odio bibendum turpis. Ut dolor mauris, condimentum at eros sit amet, consectetur pretium ante. Proin pellentesque lorem dictum ligula lacinia, eget laoreet lacus accumsan. Nullam sem quam, iaculis et elit a, porta feugiat lectus.',
             'slug' => str_slug('First Post Title'),
             'category_id' => 1,
-            'featured' => 'uploads/posts/15518720844.jpg'
+            'featured' => 'uploads/posts/15518720844.jpg',
+            'user_id' => 1
         ]);
 
         $post1->tags()->sync([1,2]);
@@ -43,7 +44,8 @@ class PostsTableSeeder extends Seeder
             Pellentesque ligula risus, suscipit nec lobortis id, aliquet vitae ipsum. Duis eget sagittis lacus. Aenean suscipit iaculis lectus, laoreet pulvinar mi cursus quis. Nam in nibh varius, imperdiet ante quis, consequat urna. Nunc aliquet vestibulum felis, quis tristique ligula placerat sit amet. Nam pharetra commodo ipsum, ut mollis nisi vulputate nec. Proin ultricies ac augue euismod finibus. Aenean porttitor purus sodales arcu varius, at volutpat sapien laoreet. Maecenas blandit accumsan ex. Duis venenatis id mi eget rhoncus. Mauris feugiat, lorem nec congue euismod, nibh massa cursus enim, nec sollicitudin neque odio bibendum turpis. Ut dolor mauris, condimentum at eros sit amet, consectetur pretium ante. Proin pellentesque lorem dictum ligula lacinia, eget laoreet lacus accumsan. Nullam sem quam, iaculis et elit a, porta feugiat lectus.',
             'slug' => str_slug('Second Post Title'),
             'category_id' => 2,
-            'featured' => 'uploads/posts/15518720844.jpg'
+            'featured' => 'uploads/posts/15518720844.jpg',
+            'user_id' => 2
         ]);
 
         $post2->tags()->sync([3]);
@@ -61,7 +63,8 @@ class PostsTableSeeder extends Seeder
             Pellentesque ligula risus, suscipit nec lobortis id, aliquet vitae ipsum. Duis eget sagittis lacus. Aenean suscipit iaculis lectus, laoreet pulvinar mi cursus quis. Nam in nibh varius, imperdiet ante quis, consequat urna. Nunc aliquet vestibulum felis, quis tristique ligula placerat sit amet. Nam pharetra commodo ipsum, ut mollis nisi vulputate nec. Proin ultricies ac augue euismod finibus. Aenean porttitor purus sodales arcu varius, at volutpat sapien laoreet. Maecenas blandit accumsan ex. Duis venenatis id mi eget rhoncus. Mauris feugiat, lorem nec congue euismod, nibh massa cursus enim, nec sollicitudin neque odio bibendum turpis. Ut dolor mauris, condimentum at eros sit amet, consectetur pretium ante. Proin pellentesque lorem dictum ligula lacinia, eget laoreet lacus accumsan. Nullam sem quam, iaculis et elit a, porta feugiat lectus.',
             'slug' => str_slug('Third Post Title'),
             'category_id' => 1,
-            'featured' => 'uploads/posts/15518720844.jpg'
+            'featured' => 'uploads/posts/15518720844.jpg',
+            'user_id' => 3
         ]);
 
         $post3->tags()->sync([2,3]);

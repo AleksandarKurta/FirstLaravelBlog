@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->integer('category_id');
             $table->string('featured');
-
+            $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();
         });
