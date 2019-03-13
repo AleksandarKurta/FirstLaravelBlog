@@ -5,3 +5,13 @@
 .height-50 {
     height:50px;
 }
+
+.bg-light-gray {
+    background-color: rgba(111, 111, 111, 0.09);
+}
+
+.underline {
+    width: 100px;
+    height: 2px;
+    background-color: orangered;
+}

@@ -15,7 +15,8 @@ class FrontEndController extends Controller
         $firstPost = Post::orderBy('created_at', 'desc')->first();
         $secondPost = Post::orderBy('created_at', 'desc')->skip(1)->take(1)->first();
         $thirdPost = Post::orderBy('created_at', 'desc')->skip(2)->take(1)->first();
-        $laravel = Category::first();
-        return view('welcome', compact('categories', 'settings', 'firstPost', 'secondPost', 'thirdPost', 'laravel'));
+        $laravel = Category::where('name','Laravel 5.8')->first();
+        $vue = Category::where('name','Vue JS')->first();
+        return view('welcome', compact('categories', 'settings', 'firstPost', 'secondPost', 'thirdPost', 'laravel', 'vue'));
     }
 }

@@ -82,18 +82,57 @@
 
         <div class="height-100"></div>
 
-        <div class="container-flud">
-            <div class="container">
-                <h3>{{ $laravel->name }}</h3>
+        <div class="container-flud bg-light-gray">
+            <div class="container pt-5">
                 <div class="row">
-                    @foreach($laravel->posts()->orderBy('created_at', 'desc')->take(3)->get() as $post)
-                    <div class="col-md-3 shadow p-3 mb-5 mr-5 bg-white rounded">
-                        <div>
-                            <img src="{{ asset($post->featured) }}" class="mx-auto d-block img-fluid" alt="" >
+                    <h3>{{ $laravel->name }}</h3>
+                </div>
+                <div class="row">
+                    <div class="underline"></div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row">
+                    @foreach($laravel->posts()->orderBy('created_at', 'desc')->take(3)->get() as $laravel)
+                    <div class="col-md-4">
+                        <div class="three-post-row shadow p-3 mb-5 bg-white rounded">
+                            <div>
+                                <img src="{{ asset($laravel->featured) }}" class="mx-auto d-block img-fluid" alt="" >
+                            </div>
+                            <div class="mt-1">
+                                <h4>{{ $laravel->title }}</h4>
+                                {{ $laravel->user->name }} <strong>{{ $laravel->created_at->toFormattedDateString() }}</strong> <span class="float-right">{{ $laravel->category->name }}</span>
+                            </div>
                         </div>
-                        <div class="mt-1">
-                            <h4>{{ $post->title }}</h4>
-                            {{ $post->user->name }} <strong>{{ $post->created_at->toFormattedDateString() }}</strong> <span class="float-right">{{ $post->category->name }}</span>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+        <div class="container-flud bg-light-gray">
+            <div class="container pt-5">
+                <div class="row">
+                    <h3>{{ $vue->name }}</h3>
+                </div>
+                <div class="row">
+                    <div class="underline"></div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row">
+                    @foreach($vue->posts()->orderBy('created_at', 'desc')->take(3)->get() as $vue)
+                    <div class="col-md-4">
+                        <div class="three-post-row shadow p-3 mb-5 bg-white rounded">
+                            <div>
+                                <img src="{{ asset($vue->featured) }}" class="mx-auto d-block img-fluid" alt="" >
+                            </div>
+                            <div class="mt-1">
+                                <h4>{{ $vue->title }}</h4>
+                                {{ $vue->user->name }} <strong>{{ $vue->created_at->toFormattedDateString() }}</strong> <span class="float-right">{{ $vue->category->name }}</span>
+                            </div>
                         </div>
                     </div>
                     @endforeach
