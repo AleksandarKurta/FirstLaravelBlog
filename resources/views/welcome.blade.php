@@ -36,9 +36,9 @@
             </nav>
         </div>
 
-        <div class="height-100"></div>
+        <div class="height-50"></div>
 
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-4">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
@@ -51,38 +51,12 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="height-50"></div>
-
-                <div class="row justify-content-center align-items-center mt-5 mb-5">
-                    <div class="col-md-5 shadow p-3 mb-5 bg-white rounded">
-                        <div>
-                            <img src="{{ asset($secondPost->featured) }}" class="mx-auto d-block img-fluid" alt="" >
-                        </div>
-                        <div class="mt-1">
-                            <h4>{{ $secondPost->title }}</h4>
-                            {{ $secondPost->user->name }} <strong>{{ $secondPost->created_at->toFormattedDateString() }}</strong> <span class="float-right">{{ $secondPost->category->name }}</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-1"></div>
-
-                    <div class="col-md-5 shadow p-3 mb-5 bg-white rounded">
-                        <div>
-                            <img src="{{ asset($thirdPost->featured) }}" class="mx-auto d-block img-fluid" alt="" >
-                        </div>
-                        <div class="mt-1">
-                            <h4>{{ $thirdPost->title }}</h4>
-                            Admin <strong>{{ $thirdPost->created_at->toFormattedDateString() }}</strong> <span class="float-right">{{ $thirdPost->category->name }}</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div class="height-100"></div>
+        <div class="height-50"></div>
 
-        <div class="container-flud bg-light-gray">
+        <div class="container-flud bg-light-gray p-5">
             <div class="container pt-5">
                 <div class="row">
                     <h3>{{ $laravel->name }}</h3>
@@ -109,9 +83,7 @@
                     @endforeach
                 </div>
             </div>
-        </div>
 
-        <div class="container-flud bg-light-gray">
             <div class="container pt-5">
                 <div class="row">
                     <h3>{{ $vue->name }}</h3>
@@ -136,6 +108,31 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
+            </div>
+        </div>
+
+        <div class="contaner-fluid bg-light-green p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ asset('img/newsletter.png') }}" class="img-fluid float-right" alt="Responsive image">
+                    </div>
+                    <div class="col-md-6 text-center pt-5">
+                        <h3 class="text-white">Email Newsletters!</h3>
+                        <form action="">
+                            <div class="input-group input-group-lg">
+                                <input type="text" class="newsletter form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary newsletter-button">Subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="text-light mt-3">Sign up for new Seosignt content, updates, surveys & offers.</div>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ asset('img/envelope.png') }}" class="img-fluid float-right" alt="Responsive image">
+                    </div>
                 </div>
             </div>
         </div>

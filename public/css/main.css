@@ -15,3 +15,23 @@
     height: 2px;
     background-color: orangered;
 }
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-light-blue {
+    background-color: #63c5ff;
+}
+
+.bg-light-green {
+    background-color: rgb(181, 230, 29);
+}
+
+.newsletter {
+    border-radius: 20px 0px 0px 20px !important;
+}
+
+.newsletter-button {
+    border-radius: 0px 20px 20px 0px !important;
+}
