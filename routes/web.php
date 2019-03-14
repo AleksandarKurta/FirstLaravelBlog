@@ -19,6 +19,8 @@ Route::get('/admin', function () {
 
 Auth::routes();
 
+Route::get('/post/{slug}', 'FrontEndController@singlePost')->name('post.single');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/statistics', 'HomeController@statistics')->name('statistics');

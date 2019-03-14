@@ -17,4 +17,10 @@ class FrontEndController extends Controller
         $vue = Category::where('name','Vue JS')->first();
         return view('welcome', compact('categories', 'settings', 'firstPost', 'laravel', 'vue'));
     }
+
+    public function singlePost(){
+        $settings = Setting::first();
+        $categories = Category::take(5)->get();
+        return view('single', compact('settings', 'categories'));
+    }
 }
