@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <body>
        
-        <div class="container-fluid bg-primary">
+        <div class="container-fluid bg-dark">
             <nav class="container navbar navbar-expand-lg">
                 <div class="mr-5">
                     <h3>{{ $settings->site_name }}</h3>
@@ -28,9 +28,13 @@
                         </h5>
                         @endforeach
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <form action="" method="POST" class="form-inline my-2 my-lg-0">
+                        <div class="input-group">
+                            <input type="search" class="newsletter form-control" placeholder="Search" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-success newsletter-button"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </nav>
@@ -120,11 +124,11 @@
                     </div>
                     <div class="col-md-6 text-center pt-5">
                         <h3 class="text-white">Email Newsletters!</h3>
-                        <form action="">
+                        <form action="" method="POST">
                             <div class="input-group input-group-lg">
                                 <input type="text" class="newsletter form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary newsletter-button">Subscribe</button>
+                                    <button class="btn btn-success newsletter-button">Subscribe</button>
                                 </div>
                             </div>
                         </form>
@@ -132,6 +136,33 @@
                     </div>
                     <div class="col-md-3">
                         <img src="{{ asset('img/envelope.png') }}" class="img-fluid float-right" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid bg-dark p-5">
+            <div class="row justify-content-center">
+                <div class="col-md-4 text-center">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <div class="underline-light-green mb-3"></div>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget purus sit amet lorem elementum sagittis sed sit amet odio. Vestibulum vel ante sagittis, aliquam mi ut, sagittis est. Nunc placerat vitae nisl nec mollis. In vulputate nibh ut nulla dictum, non pharetra tellus tristique. Nullam consequat laoreet quam, vitae pharetra ante porttitor vitae. Pellentesque id ultrices metus. Donec tempor nisl at felis viverra, in maximus lectus lobortis. Aenean sed eros eleifend, pellentesque risus et, maximus felis. Etiam suscipit, mauris in rutrum tincidunt, ex nunc viverra orci, ut laoreet quam ex accumsan orci. Aenean vestibulum aliquet libero eget rhoncus.</p> 
+                </div>
+            </div>
+
+            <div class="container h-100 mt-5 border-top border-secondary">
+                <div class="row h-100 justify-content-center align-items-center p-3">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <i class="fas fa-phone-square fa-7x"></i>&nbsp;&nbsp;
+                        Lorem ipsum dolor sit amet
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <i class="fas fa-envelope-open-text fa-7x"></i>&nbsp;&nbsp;
+                        Lorem ipsum dolor sit amet
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <i class="fas fa-globe-europe fa-7x"></i>&nbsp;&nbsp;
+                        Lorem ipsum dolor sit amet
                     </div>
                 </div>
             </div>

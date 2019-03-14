@@ -35,3 +35,8 @@
 .newsletter-button {
     border-radius: 0px 20px 20px 0px !important;
 }
+
+.underline-light-green {
+    height: 2px;
+    background-color: orangered;
+}
