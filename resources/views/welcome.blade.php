@@ -18,7 +18,7 @@
                 <div class="mr-5">
                     <h3>{{ $settings->site_name }}</h3>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         @foreach($categories as $category)
                             <h5>
@@ -146,7 +146,9 @@
                 <div class="col-md-4 text-center">
                     <h2>Lorem ipsum dolor sit amet</h2>
                     <div class="underline-light-green mb-3"></div>
-                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget purus sit amet lorem elementum sagittis sed sit amet odio. Vestibulum vel ante sagittis, aliquam mi ut, sagittis est. Nunc placerat vitae nisl nec mollis. In vulputate nibh ut nulla dictum, non pharetra tellus tristique. Nullam consequat laoreet quam, vitae pharetra ante porttitor vitae. Pellentesque id ultrices metus. Donec tempor nisl at felis viverra, in maximus lectus lobortis. Aenean sed eros eleifend, pellentesque risus et, maximus felis. Etiam suscipit, mauris in rutrum tincidunt, ex nunc viverra orci, ut laoreet quam ex accumsan orci. Aenean vestibulum aliquet libero eget rhoncus.</p> 
+                        <p>
+                            {{ $settings->footer_information }}
+                        </p> 
                 </div>
             </div>
 
@@ -154,15 +156,15 @@
                 <div class="row h-100 justify-content-center align-items-center p-3">
                     <div class="col-md-4 d-flex align-items-center">
                         <i class="fas fa-phone-square fa-7x"></i>&nbsp;&nbsp;
-                        Lorem ipsum dolor sit amet
+                        {{ $settings->contact_number }}
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
                         <i class="fas fa-envelope-open-text fa-7x"></i>&nbsp;&nbsp;
-                        Lorem ipsum dolor sit amet
+                        {{ $settings->contact_email }}
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
                         <i class="fas fa-globe-europe fa-7x"></i>&nbsp;&nbsp;
-                        Lorem ipsum dolor sit amet
+                        {{ $settings->address }}
                     </div>
                 </div>
             </div>
