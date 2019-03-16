@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin', ['except' => ['index']]);
+    }
+
     public function index(){
         $setting = Setting::first();
         return view('admin.settings.settings', compact('setting'));

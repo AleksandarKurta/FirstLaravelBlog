@@ -6,11 +6,12 @@
             </div>
             <div class="col-md-6 text-center pt-5">
                 <h3 class="text-white">Email Newsletters!</h3>
-                <form action="" method="POST">
+                <form action="/subscribe" method="POST">
+                    @csrf
                     <div class="input-group input-group-lg">
-                        <input type="text" class="newsletter form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="basic-addon2">
+                        <input type="text" name="email" class="newsletter form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-success newsletter-button">Subscribe</button>
+                            <button  type="submit" class="btn btn-success newsletter-button">Subscribe</button>
                         </div>
                     </div>
                 </form>

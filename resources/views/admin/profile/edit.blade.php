@@ -34,15 +34,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>
-                                    <input type="text" name="facebook" class="form-control" value="{{ $user->profile->facebook }}">
+                                    <input type="text" name="facebook" class="form-control" @if(isset($user->profile->facebook)) value="{{ $user->profile->facebook }}" @endif>
                                 </div>
                                 <div class="form-group">
                                     <label for="youtube">Youtube</label>
-                                    <input type="text" name="youtube" class="form-control" value="{{ $user->profile->youtube }}">
+                                    <input type="text" name="youtube" class="form-control" @if(isset($user->profile->youtube)) value="{{ $user->profile->youtube }}" @endif>
                                 </div>
                                 <div class="form-group">
                                     <label for="about">About</label>
-                                    <textarea name="about" id="about" cols="30" rows="10" class="form-control">{{ $user->profile->about }}</textarea>
+                                    <textarea name="about" id="about" cols="30" rows="10" class="form-control">@if(isset($user->profile->about)) {{ $user->profile->about }} @endif</textarea>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Edit profile</button>

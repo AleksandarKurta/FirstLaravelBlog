@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,15 +10,29 @@
 |
 */
 
+Route::post('/subscribe', function(){
+    $email = request('email');
+
+    Newsletter::subscribe($email);
+
+    Session::flash('subscribed', 'Successfully subscribed.');
+
+    return back();
+});
+
 Route::get('/', 'FrontEndController@index');
 
 Route::get('/admin', function () {
     return redirect('/admin/home');
 })->middleware('auth');
 
+Route::get('/results', 'FrontEndController@search');
+
 Auth::routes();
 
 Route::get('/post/{slug}', 'FrontEndController@singlePost')->name('post.single');
+Route::get('/category/{id}', 'FrontEndController@category')->name('category');
+Route::get('/tag/{id}', 'FrontEndController@tag')->name('tag');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
@@ -34,10 +47,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/profile/edit', 'ProfilesController@edit')->name('profile.edit');
     Route::post('/profile/update/{user}', 'ProfilesController@update')->name('profile.update');
     Route::resource('user', 'UsersController');
-    Route::get('/user/admin/{id}', 'UsersController@admin')->name('user.admin')->middleware('admin');
-    Route::get('/user/notadmin/{id}', 'UsersController@notadmin')->name('user.notadmin')->middleware('admin');
-    Route::get('/settings', 'SettingsController@index')->name('settings')->middleware('admin');
-    Route::post('/settings/update/{setting}', 'SettingsController@update')->name('settings.update')->middleware('admin');
+    Route::get('/user/admin/{id}', 'UsersController@admin')->name('user.admin');
+    Route::get('/user/notadmin/{id}', 'UsersController@notadmin')->name('user.notadmin');
+    Route::get('/settings', 'SettingsController@index')->name('settings');
+    Route::post('/settings/update/{setting}', 'SettingsController@update')->name('settings.update');
 });
 
 

@@ -1,23 +1,24 @@
-<div class="container-fluid bg-dark">
-    <nav class="container navbar navbar-expand-lg">
-        <div class="mr-5">
-            <h3>{{ $settings->site_name }}</h3>
+<div class="container-fluid bg-purple text-white">
+    <nav class="container navbar navbar-expand-lg text-white">
+        <div class="mr-5 text-white site-name">
+            {{ $settings->site_name }}
         </div>
-        <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                @foreach($categories as $category)
-                    <h5>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">{{ $category->name }}</a>
+        <div class="collapse navbar-collapse ml-5 " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
-                </h5>
+                @foreach($categories as $category)
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('category', ['id' => $category->id]) }}">{{ $category->name }}</a>
+                    </li>
                 @endforeach
-            </ul>
-            <form action="" method="POST" class="form-inline my-2 my-lg-0">
+                </ul>
+            <form action="/results" method="GET" class="form-inline my-2 my-lg-0">
                 <div class="input-group">
-                    <input type="search" class="newsletter form-control" placeholder="Search" aria-label="Search">
+                    <input type="search" name="query" class="newsletter form-control" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
-                        <button class="btn btn-success newsletter-button"><i class="fas fa-search"></i></button>
+                        <button type="submit" class="btn btn-success newsletter-button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>

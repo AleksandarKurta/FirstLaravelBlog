@@ -74,9 +74,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="{{ route('home') }}" class="nav-link active">
-              <i class="fas fa-home text-success"></i>
+              <i class="fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="/" class="nav-link">
+              <i class="fas fa-home text-success"></i>
+              <p>
+                Wisit Website
               </p>
             </a>
           </li>
@@ -88,31 +96,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
-          @if(Auth::user()->admin)
-            <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link">
-                <i class="fas fa-users text-primary"></i>
-                <p>
-                  Users
-                  <i class="right fa fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview" >
-                <li class="nav-item">
-                  <a href="{{ route('user.index') }}" class="nav-link">
-                    <i class="far fa-circle"></i>
-                    <p>Users List</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ route('user.create') }}" class="nav-link">
-                    <i class="far fa-circle"></i>
-                    <p>User Create</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          @endif
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="fas fa-users text-primary"></i>
+              <p>
+                Users
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" >
+              <li class="nav-item">
+                <a href="{{ route('user.index') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>Users List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('user.create') }}" class="nav-link">
+                  <i class="far fa-circle"></i>
+                  <p>User Create</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
               <i class="fas fa-th-list text-secondary"></i>
@@ -193,6 +199,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <i class="fas fa-table text-warning"></i>
               <p>
                 Statistics
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('settings') }}" class="nav-link">
+              <i class="fas fa-cogs"></i>
+              <p>
+                Settings
               </p>
             </a>
           </li>

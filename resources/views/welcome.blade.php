@@ -43,7 +43,7 @@
                                 <img src="{{ asset($laravel->featured) }}" class="mx-auto d-block img-fluid" alt="" >
                             </div>
                             <div class="mt-1">
-                                <h4>{{ $laravel->title }}</h4>
+                                <h4><a href="{{ route('post.single', ['slug' => $laravel->slug ])}}">{{ $laravel->title }}</a></h4>
                                 {{ $laravel->user->name }} <strong>{{ $laravel->created_at->toFormattedDateString() }}</strong> <span class="float-right">{{ $laravel->category->name }}</span>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                 <img src="{{ asset($vue->featured) }}" class="mx-auto d-block img-fluid" alt="" >
                             </div>
                             <div class="mt-1">
-                                <h4>{{ $vue->title }}</h4>
+                                <h4><a href="{{ route('post.single', ['slug' => $vue->slug ])}}">{{ $vue->title }}</a></h4>
                                 {{ $vue->user->name }} <strong>{{ $vue->created_at->toFormattedDateString() }}</strong> <span class="float-right">{{ $vue->category->name }}</span>
                             </div>
                         </div>

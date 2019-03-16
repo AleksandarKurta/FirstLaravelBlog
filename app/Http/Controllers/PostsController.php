@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin', ['except' => ['index','edit']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -154,6 +157,10 @@ class PostsController extends Controller
 
     public function kill($id){
         $post = Post::withTrashed()->where('id', $id)->first();
+
+        if(file_exists($post->featured)){
+            unlink($post->featured);
+        }
 
         $post->tags()->detach();
 

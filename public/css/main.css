@@ -40,3 +40,46 @@
     height: 2px;
     background-color: orangered;
 }
+
+.img-repeat {
+    background-image: url("rep.jpg");
+    background-repeat: repeat;
+    height: 300px;
+}
+
+.bg-purple {
+    background-color: #563d7c;
+    color: white !important;
+}
+
+.single-content {
+    color: #acacac;
+}
+
+.single-content > p{
+    font-size: 18px !important;
+}
+
+.nav-link {
+    font-size: 18px;
+}
+
+.site-name {
+    font-size: 25px;
+}
+
+.tags {
+    color: #acacac;
+}
+
+.tag-button {
+    border-radius: 20px;
+    color: #acacac;
+    border-color: #acacac;
+}
+
+.indicators a:hover { 
+    text-decoration: none; 
+}
+
+

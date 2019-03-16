@@ -8,6 +8,9 @@ use App\Category;
 
 class CategoriesController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin', ['except' => ['index','edit']]);
+    }
     /**
      * Display a listing of the resource.
      *

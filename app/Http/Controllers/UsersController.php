@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('admin');
+        $this->middleware('admin', ['except' => ['index','edit']]);
     }
     /**
      * Display a listing of the resource.
@@ -103,6 +103,9 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
+        if(file_exists($user->profile->avatar)){
+            unlink($user->profile->avatar);
+        }
         $user->delete();
 
         $user->profile->delete();
